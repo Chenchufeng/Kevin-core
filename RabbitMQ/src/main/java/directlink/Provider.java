@@ -23,7 +23,7 @@ public class Provider {
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
         // 消息内容
-        String message = "Hello World! send success!";
+        String message = "Hello World! send success!Kevin chen";
         channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
         System.out.println(" [x] Sent '" + message + "'");
         //关闭通道和连接
