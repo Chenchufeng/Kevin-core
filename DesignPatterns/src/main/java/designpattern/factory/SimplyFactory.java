@@ -1,6 +1,5 @@
 package designpattern.factory;
 
-import com.sun.xml.internal.bind.v2.runtime.output.FastInfosetStreamWriterOutput;
 import designpattern.factory.pizza.CheesePizza;
 import designpattern.factory.pizza.GreekPizza;
 import designpattern.factory.pizza.Pizza;

@@ -1,14 +1,11 @@
 package designpattern.factory.order;
 
 import designpattern.factory.SimplyFactory;
-import designpattern.factory.pizza.CheesePizza;
-import designpattern.factory.pizza.GreekPizza;
 import designpattern.factory.pizza.Pizza;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.SimpleTimeZone;
 
 /**
  * @Author: chufeng Chen
