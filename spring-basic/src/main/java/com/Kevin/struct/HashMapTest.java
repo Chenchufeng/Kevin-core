@@ -1,4 +1,4 @@
-package struct;
+package com.Kevin.struct;
 
 import java.util.HashMap;
 

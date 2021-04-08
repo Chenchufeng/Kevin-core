@@ -1,4 +1,4 @@
-package Str;
+package com.Kevin.Str;
 
 /**
  * @Author: chufeng Chen
