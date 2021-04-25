@@ -1,7 +1,6 @@
 package com.Kevin.entry;
 
 import com.Kevin.app.AppConfig;
-import com.Kevin.services.IndexService;
 import com.Kevin.services.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
