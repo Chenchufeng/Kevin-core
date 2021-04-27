@@ -9,6 +9,7 @@
         <module name="RabbitMQ" />
         <module name="JVM" />
         <module name="DesignPatterns" />
+        <module name="spring-chufeng" />
         <module name="spring-basic" />
       </profile>
     </annotationProcessing>
