@@ -1,6 +1,7 @@
 package com.service;
 
 import com.spring.Component;
+import com.spring.Scope;
 
 /**
  * @Author: chufeng Chen
@@ -9,5 +10,6 @@ import com.spring.Component;
  */
 
 @Component("userService") //当扫描到这个类的时候，要对这个类做一些解析
+@Scope("prototype")
 public class UserService {
 }
