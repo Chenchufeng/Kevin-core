@@ -1,5 +1,6 @@
 package com.chufeng;
 
+import com.service.UserService;
 import com.spring.ChufengApplicationContext;
 
 /**
@@ -10,8 +11,7 @@ import com.spring.ChufengApplicationContext;
 public class Test {
     public static void main(String[] args) {
         ChufengApplicationContext context = new ChufengApplicationContext(AppConfig.class);
-        System.out.println("\r\n"+context.getBean("userService"));
-        System.out.println("\r\n"+context.getBean("userService"));
-        System.out.println("\r\n"+context.getBean("userService"));
+        UserService userService = (UserService) context.getBean("userService");
+        userService.test();
     }
 }

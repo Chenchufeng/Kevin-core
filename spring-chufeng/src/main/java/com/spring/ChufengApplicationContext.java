@@ -2,6 +2,7 @@ package com.spring;
 
 import java.io.File;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.Map;
@@ -37,6 +38,15 @@ public class ChufengApplicationContext {
         Class clazz = beanDefinition.getClazz();
         try {
             Object instance = clazz.getDeclaredConstructor().newInstance();
+
+            //依赖注入
+            for (Field field : clazz.getDeclaredFields()) {
+                if (field.isAnnotationPresent(Autowired.class)){  //加了Autowored注解的属性才回去赋值
+                    Object bean = getBean(field.getName());
+                    field.set(instance,bean);
+                }
+            }
+
             return instance;
         } catch (InstantiationException e) {
             e.printStackTrace();
