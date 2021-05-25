@@ -9,12 +9,11 @@
         <module name="RabbitMQ" />
         <module name="JVM" />
         <module name="DesignPatterns" />
+        <module name="redis-jedis" />
         <module name="spring-chufeng" />
         <module name="spring-basic" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="DesignPattern" target="8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
