@@ -1,4 +1,4 @@
-package com.kuang.utils;
+package com.kevin.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -69,7 +69,7 @@ public final class RedisUtil {
             if (key.length == 1) {
                 redisTemplate.delete(key[0]);
             } else {
-                redisTemplate.delete(CollectionUtils.arrayToList(key));
+                redisTemplate.delete(String.valueOf(CollectionUtils.arrayToList(key)));
             }
         }
     }

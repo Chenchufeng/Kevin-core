@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 /**
  * @Author: chufeng Chen
  * @Description:
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class User implements Serializable {
     private String name;
     private int age;
 }

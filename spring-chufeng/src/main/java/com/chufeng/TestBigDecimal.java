@@ -5,7 +5,7 @@ import java.util.Objects;
 
 /**
  * @Author: chufeng Chen
- * @Description:
+ * @Description: https://github.com/Snailclimb/JavaGuide
  * @Date:Create：in 2021/5/27 23:33
  */
 public class TestBigDecimal {
@@ -31,5 +31,18 @@ public class TestBigDecimal {
         System.out.println(x); /* 0.1 */
         System.out.println(y); /* 0.1 */
         System.out.println(Objects.equals(x, y)); /* true */
+        System.out.println("===============================================\r\n");
+        //BigDecimal 的大小比较
+        //a.compareTo(b) : 返回 -1 表示 a 小于 b，0 表示 a 等于 b ， 1表示 a 大于 b。
+
+        BigDecimal f1 = new BigDecimal("1.0");
+        BigDecimal f2 = new BigDecimal("0.9");
+        System.out.println(f1.compareTo(f2));// 1
+        System.out.println("===============================================\r\n");
+        //BigDecimal 保留几位小数
+        //通过 setScale方法设置保留几位小数以及保留规则。保留规则有挺多种，不需要记，IDEA会提示。
+        BigDecimal m = new BigDecimal("1.255433");
+        BigDecimal n = m.setScale(3,BigDecimal.ROUND_HALF_DOWN);
+        System.out.println(n);// 1.255
     }
 }
