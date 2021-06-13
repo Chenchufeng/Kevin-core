@@ -1,5 +1,8 @@
 package com.rabbitmq.service;
 
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,5 +70,39 @@ public class OrderService {
         //  *.email.#    email
         //  com.#   sms
         rabbitTemplate.convertAndSend(exchangeName,routingKey,orderId);
+    }
+
+
+    public void makeOrderTtl(String userid,String productid,int num){
+        //1.根据商品id查询库存是否充足
+        //2.保存订单
+        String orderId = UUID.randomUUID().toString();
+        System.out.println("订单生成成功: "+orderId);
+        //3.通过MQ来完成消息的分发
+        String exchangeName="ttl_direct_exchange";
+        String routingKey="ttl";  //duanxin和sms能收到,email收不到
+        rabbitTemplate.convertAndSend(exchangeName,routingKey,orderId);
+    }
+
+
+    public void makeOrderTtlMessasge(String userid,String productid,int num){
+        //1.根据商品id查询库存是否充足
+        //2.保存订单
+        String orderId = UUID.randomUUID().toString();
+        System.out.println("订单生成成功: "+orderId);
+        //3.通过MQ来完成消息的分发
+        String exchangeName="ttl_direct_exchange";
+        String routingKey="ttlmessage";  //duanxin和sms能收到,email收不到
+        //给消息设置过期时间
+        MessagePostProcessor messagePostProcessor = new MessagePostProcessor() { //匿名内部类写法
+            @Override
+            public Message postProcessMessage(Message message) throws AmqpException {
+                //这里就是字符串
+                message.getMessageProperties().setExpiration("5000");
+                message.getMessageProperties().setContentEncoding("UTF-8");
+                return message;
+            }
+        };
+        rabbitTemplate.convertAndSend(exchangeName,routingKey,orderId,messagePostProcessor);
     }
 }

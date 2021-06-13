@@ -24,4 +24,14 @@ class SpringbootOrderRabbitmqProducerApplicationTests {
         orderService.makeOrderTopic("1","1",12);
     }
 
+    @Test
+    void testOrderTtl(){
+        orderService.makeOrderTtl("1","1",12);
+    }
+
+    @Test
+    void testOrderTtlMessage(){
+        orderService.makeOrderTtlMessasge("1","1",12);
+    }
+
 }
