@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.kevin.seckill.pojo")  //com.kevin.seckill.pojo包下面的接口类，在编译之后都会生成相应的实现类
+@MapperScan("com.kevin.seckill.mapper")  //com.kevin.seckill.pojo包下面的接口类，在编译之后都会生成相应的实现类
 public class SeckillApplication {
 
     public static void main(String[] args) {
