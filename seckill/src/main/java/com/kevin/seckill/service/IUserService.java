@@ -5,6 +5,9 @@ import com.kevin.seckill.pojo.User;
 import com.kevin.seckill.vo.LoginVo;
 import com.kevin.seckill.vo.RespBean;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * <p>
  *  服务类
@@ -21,5 +24,5 @@ public interface IUserService extends IService<User> {
      * @Param [loginVo]
      * @return java.lang.String
      */
-    RespBean doLogin(LoginVo loginVo);
+    RespBean doLogin(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response);
 }

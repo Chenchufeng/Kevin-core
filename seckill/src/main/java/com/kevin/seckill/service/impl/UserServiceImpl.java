@@ -5,14 +5,17 @@ import com.kevin.seckill.exception.GlobalException;
 import com.kevin.seckill.mapper.UserMapper;
 import com.kevin.seckill.pojo.User;
 import com.kevin.seckill.service.IUserService;
+import com.kevin.seckill.utils.CookieUtil;
 import com.kevin.seckill.utils.MD5Util;
-import com.kevin.seckill.utils.ValidatorUtil;
+import com.kevin.seckill.utils.UUIDUtil;
 import com.kevin.seckill.vo.LoginVo;
 import com.kevin.seckill.vo.RespBean;
 import com.kevin.seckill.vo.RespBeanEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.apache.commons.lang3.StringUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * <p>
@@ -35,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * @return java.lang.String
      */
     @Override
-    public RespBean doLogin(LoginVo loginVo) {
+    public RespBean doLogin(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response) {
 
         String mobile = loginVo.getMobile();
         String password = loginVo.getPassword();
@@ -45,9 +48,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if(null == user){
             throw new GlobalException(RespBeanEnum.LOGIN_ERROR);
         }
+        //判断密码是否正确
         if(!MD5Util.fromPassToDBPass(password,user.getSalt()).equals(user.getPassword())){
             throw new GlobalException(RespBeanEnum.LOGIN_ERROR);
         }
+        //生成Cookie
+        String ticket = UUIDUtil.uuid();
+        request.getSession().setAttribute(ticket,user);
+        CookieUtil.setCookie(request,response,"userTicket",ticket);
+
         return RespBean.success();
     }
 }
