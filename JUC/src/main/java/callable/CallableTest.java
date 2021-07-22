@@ -16,7 +16,8 @@ public class CallableTest {
         MyThread myThread=new MyThread();
         FutureTask myFutureTask=new FutureTask(myThread);
         new Thread(myFutureTask,"A").start();
-        String o = (String) myFutureTask.get();//获取callable的返回结果
+        new Thread(myFutureTask,"B").start(); //结果会被缓存，效率高
+        String o = (String) myFutureTask.get();//获取callable的返回结果,这个方法可能会产生阻塞！
         System.out.println(o);
     }
 }
@@ -26,6 +27,7 @@ class MyThread implements Callable<String> {
     @Override
     public String call() {
         System.out.println("Kevin");
+        //耗时的操作
         return "123";
     }
 }
