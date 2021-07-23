@@ -20,8 +20,9 @@ public class CountDownLatchDemo {
      * //获取当前计数器的值
      * public long getCount();
      */
+    private final static int threadCount = 6;
     public static void main(String[] args) throws InterruptedException {
-        CountDownLatch countDownLatch=new CountDownLatch(6);
+        CountDownLatch countDownLatch=new CountDownLatch(threadCount);
         for (int i = 1; i <=6; i++) {
             new Thread(()->{
                 System.out.println(Thread.currentThread().getName()+ " Go Out");
