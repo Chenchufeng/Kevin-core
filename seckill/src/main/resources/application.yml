@@ -4,6 +4,18 @@ spring:
     # \u5173\u95ED\u7F13\u5B58
     cache: false
   # \u6570\u636E\u6E90
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 10000ms
+        max-idle: 100
+        min-idle: 5
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
