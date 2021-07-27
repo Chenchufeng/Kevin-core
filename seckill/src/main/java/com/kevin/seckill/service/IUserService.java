@@ -25,4 +25,13 @@ public interface IUserService extends IService<User> {
      * @return java.lang.String
      */
     RespBean doLogin(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response);
+
+    /**
+     * @author Kevin
+     * @date 2021/7/27 12:14 上午
+     * @param [userTicket]
+     * @return com.kevin.seckill.pojo.User
+     * 根据cookie获取用户
+     */
+    User getUserByCookie(String userTicket,HttpServletRequest request,HttpServletResponse response);
 }
