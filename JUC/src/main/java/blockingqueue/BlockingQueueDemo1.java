@@ -1,6 +1,5 @@
 package blockingqueue;
 
-import sun.tools.attach.HotSpotVirtualMachine;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
