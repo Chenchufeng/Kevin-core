@@ -16,7 +16,7 @@
 </head>
 <body>
 <p th:text="'Hello:' + ${user.nickname}"></p>
-<!--<div class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-heading">秒杀商品列表</div>
     <table class="table" id="goodsList">
         <tr>
@@ -33,9 +33,10 @@
             <td th:text="${goods.goodsPrice}"></td>
             <td th:text="${goods.seckillPrice}"></td>
             <td th:text="${goods.stockCount}"></td>
-            <td><a th:href="'/goodsDetail.htm?goodsId='+${goods.id}">详情</a></td>
+            <td><a th:href="'/goods/toDetail/'+${goods.id}">详情</a></td>
+<!--            <td><a th:href="'/goodsDetail.htm?goodsId='+${goods.id}">详情</a></td>-->
         </tr>
     </table>
-</div>-->
+</div>
 </body>
 </html>
