@@ -20,7 +20,7 @@ public class Thread1 extends Thread {
                 System.out.print(i + " ");
                 if (i % 2 == 0) {
                     // 不能忘了 唤醒其它线程
-                    obj.notifyAll();
+                    obj.notifyAll();  //当调用obj.notify/notifyAll的时候，正持有obj锁，因此，A1，A2，A3虽被唤醒，但是仍无法获得obj锁。直到B退出synchronized块，释放obj锁后，A1，A2，A3中的一个才有机会获得锁继续执行。
                     try {
                         obj.wait();
                     } catch (InterruptedException e) {
