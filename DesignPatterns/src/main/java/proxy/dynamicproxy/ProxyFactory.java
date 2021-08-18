@@ -9,11 +9,12 @@ package proxy.dynamicproxy;
  *  * 动态代理不需要实现接口,但是需要指定接口类型
  *  */
 
-import proxy.staticproxy.IUserDao;
+
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 
 public class ProxyFactory {
     //维护一个目标对象
@@ -33,6 +34,7 @@ public class ProxyFactory {
                 //执行目标对象方法
                 Object object = method.invoke(target, args);
                 System.out.println("提交事务2");
+                ArrayList
                 return object;
             }
         });
