@@ -3,7 +3,6 @@ package proxy;
 import proxy.dynamicproxy.ProxyFactory;
 import proxy.staticproxy.IUserDao;
 import proxy.staticproxy.UserDao;
-import proxy.staticproxy.UserDaoProxy;
 
 /**
  * @Author: Kevin

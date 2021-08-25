@@ -34,7 +34,6 @@ public class ProxyFactory {
                 //执行目标对象方法
                 Object object = method.invoke(target, args);
                 System.out.println("提交事务2");
-                ArrayList
                 return object;
             }
         });
