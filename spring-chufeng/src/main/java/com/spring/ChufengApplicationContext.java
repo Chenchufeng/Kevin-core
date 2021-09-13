@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ChufengApplicationContext {
     private Class configClass;
-    private ConcurrentHashMap<String,Object> singletonObjects=new ConcurrentHashMap<>(); //单例池
+    private ConcurrentHashMap<String,Object> singletonObjects=new ConcurrentHashMap<>(); //单例池,一级缓存
     private ConcurrentHashMap<String,BeanDefinition> beanDefinitionMap =new ConcurrentHashMap<>();
 
     public ChufengApplicationContext(Class configClass) {
@@ -75,7 +75,7 @@ public class ChufengApplicationContext {
         //App ---->classpath
         ClassLoader classLoader = ChufengApplicationContext.class.getClassLoader();//app类加载器
         //通过类加载器拿类的资源信息
-        URL resource = classLoader.getResource("com/service");//是app类加载器的路径：classpath=D:\document\core-knowledge\spring-chufeng\target\classes
+        URL resource = classLoader.getResource("com/service") ;//是app类加载器的路径：classpath=D:\document\core-knowledge\spring-chufeng\target\classes
         //得到的resource是一个目录,把resource转成一个file对象
         File file = new File(resource.getFile());
         if(file.isDirectory()){

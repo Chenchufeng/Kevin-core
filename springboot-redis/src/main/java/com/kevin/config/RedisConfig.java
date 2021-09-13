@@ -10,6 +10,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.util.LinkedHashMap;
+
 @Configuration
 public class RedisConfig {
 
@@ -34,7 +36,6 @@ public class RedisConfig {
       // hash的value序列化方式采用jackson
       template.setHashValueSerializer(jackson2JsonRedisSerializer);
       template.afterPropertiesSet();
-
       return template;
   }
 
