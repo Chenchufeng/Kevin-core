@@ -2,6 +2,7 @@ package cn.itcast.nio.c2;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -11,9 +12,11 @@ import java.nio.channels.FileChannel;
 public class TestByteBuffer {
 
     public static void main(String[] args) {
+        String filePath="/Users/chenchufeng/IdeaProjects/Kevin-core/netty-demo/data.txt";
+        File file = new File(filePath);
         // FileChannel
         // 1. 输入输出流， 2. RandomAccessFile
-        try (FileChannel channel = new FileInputStream("data.txt").getChannel()) {
+        try (FileChannel channel = new FileInputStream(file).getChannel()) {
             // 准备缓冲区
             ByteBuffer buffer = ByteBuffer.allocate(10);
             while(true) {

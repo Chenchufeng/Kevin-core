@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/generator/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-redis/pom.xml" />
         <option value="$PROJECT_DIR$/Netty/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-demo/pom.xml" />
       </list>
     </option>
   </component>

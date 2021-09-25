@@ -22,6 +22,7 @@
         <module>scala-core</module>
         <module>spring-security</module>
         <module>Netty</module>
+        <module>leetcode</module>
     </modules>
 
     <properties>

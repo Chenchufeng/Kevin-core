@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Djps.track.ap.dependencies=false" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -10,16 +11,17 @@
         <module name="JVM" />
         <module name="redis-jedis" />
         <module name="spring-chufeng" />
+        <module name="netty-demo" />
         <module name="seckill" />
         <module name="DesignPatterns" />
         <module name="generator" />
         <module name="redis-springboot" />
+        <module name="leetcode" />
         <module name="springboot-order-rabbitmq-producer" />
         <module name="springboot-order-rabbitmq-consumer" />
         <module name="spring-basic" />
         <module name="RabbitMQ" />
         <module name="scala-core" />
-        <module name="Netty" />
         <module name="JUC" />
         <module name="spring-security" />
       </profile>
@@ -28,7 +30,6 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Netty" options="-parameters" />
       <module name="generator" options="-parameters" />
       <module name="redis-springboot" options="-parameters" />
       <module name="seckill" options="-parameters" />
