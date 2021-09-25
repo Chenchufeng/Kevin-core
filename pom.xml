@@ -21,6 +21,7 @@
         <module>flink-core</module>
         <module>scala-core</module>
         <module>spring-security</module>
+        <module>Netty</module>
     </modules>
 
     <properties>

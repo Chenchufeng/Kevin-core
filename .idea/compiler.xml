@@ -19,6 +19,7 @@
         <module name="spring-basic" />
         <module name="RabbitMQ" />
         <module name="scala-core" />
+        <module name="Netty" />
         <module name="JUC" />
         <module name="spring-security" />
       </profile>
@@ -27,6 +28,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Netty" options="-parameters" />
       <module name="generator" options="-parameters" />
       <module name="redis-springboot" options="-parameters" />
       <module name="seckill" options="-parameters" />
