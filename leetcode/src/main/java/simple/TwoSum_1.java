@@ -22,7 +22,7 @@ import java.util.HashMap;
  * 输入：nums = [3,3], target = 6
  * 输出：[0,1]
  */
-public class TwoSum {
+public class TwoSum_1 {
     public static void main(String[] args) {
 
 //        int[] arr=new int[]{2,7,11,15};
