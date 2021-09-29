@@ -84,12 +84,11 @@ public class SelectSort {
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
-        int maxSize = 100;
-        int maxValue = 100;
-        int[] arr = generateRandomArray(maxSize, maxValue);
+        System.out.print("初始数组: ");
+        int[] arr=new int[]{5,9,15,2,71,23,46,8,35,64};
         printArray(arr);
-//        selectionSort(arr);
-//        printArray(arr);
+        System.out.print("排序之后: ");
+        selectionSort(arr);
+        printArray(arr);
     }
 }
