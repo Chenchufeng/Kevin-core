@@ -11,18 +11,17 @@
     <modules>
         <module>RabbitMQ</module>
         <module>DesignPatterns</module>
-        <module>JVM</module>
         <module>spring-basic</module>
         <module>spring-chufeng</module>
         <module>redis-jedis</module>
         <module>JUC</module>
         <module>generator</module>
         <module>scala-core</module>
-        <module>flink-core</module>
         <module>scala-core</module>
         <module>spring-security</module>
-        <module>Netty</module>
         <module>leetcode</module>
+        <module>java-core</module>
+        <module>jvm</module>
     </modules>
 
     <properties>

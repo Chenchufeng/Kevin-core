@@ -23,7 +23,6 @@ public class CallableTest {
 }
 
 class MyThread implements Callable<String> {
-
     @Override
     public String call() {
         System.out.println("Kevin");
